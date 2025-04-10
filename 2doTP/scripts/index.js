@@ -61,6 +61,7 @@ while (true) {
         break;
     }
     texto += input + " - ";
+    // Si apretas "cancelar" y tenias una cadena de texto, ESA NO SE MUESTRA EN LA VARIABLE "texto"
 }
 
 // 4- Realiza un script que pida números hasta que se pulse “cancelar”. 
@@ -220,9 +221,10 @@ edad2 = pedirEdad();
 nombre2 = pedirNombre();
 edad3 = pedirEdad();
 nombre3 = pedirNombre();
-let edades = [edad1, edad2, edad3];
-let nombres = [nombre1, nombre2, nombre3];
-let mayor = Math.max(...edades);
-let indice = edades.indexOf(mayor);
-
+const edades = [edad1, edad2, edad3];
+const nombres = [nombre1, nombre2, nombre3];
+const mayor = Math.max(...edades);
+// Se utiliza la función Math.max() para encontrar el valor máximo en el arreglo edades.
+// ... se llama "operador de propagación" y se utiliza para "desempaquetar" el arreglo edades en una lista de argumentos individuales que se pasan a la función Math.max().
+const indice = edades.indexOf(mayor);
 alert(`El nombre del mayor es ${nombres[indice]}`);
