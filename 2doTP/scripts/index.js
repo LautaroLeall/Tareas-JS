@@ -63,7 +63,9 @@ while (true) {
     texto += input + " - ";
 }
 
-// 4- Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo números. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
+// 4- Realiza un script que pida números hasta que se pulse “cancelar”. 
+//Si no es un número deberá indicarse con un «alert» y seguir pidiendo números. 
+// Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
 let suma = 0;
 while (true) {
     const num = prompt("Introduce un número ('cancelar' para salir)");
@@ -77,3 +79,150 @@ while (true) {
         suma += parseInt(num);
     }
 }
+
+// 5- Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de identidad).
+// El algoritmo para calcular la letra del dni es el siguiente :
+// El número debe ser entre 0 y 99999999
+// Debemos calcular el resto de la división entera entre el número y el número 23.
+// Según el resultado, de 0 a 22, le corresponderá una letra de las siguientes:  (T, R, W, A, G, M, Y, F, P, D, X, B, N, J, Z, S, Q, V, H, L, C, K, E) 
+// Si lo introducido no es un número deberá indicarse con un alert y volver a preguntar.
+// Deberá de repetirse el proceso hasta que el usuario pulse «cancelar».
+
+// SIN HACER EL PUNTO 5
+
+// 6- Realiza un script que escriba una pirámide del 1 al 30 de la siguiente forma :
+// 1
+// 22
+// 333
+// 4444
+// 55555
+// 666666
+// . . .
+for (let i = 1; i <= 30; i++) {
+    let fila = "";
+    for (let j = 0; j < i; j++) {
+        fila += i;
+    }
+    document.write(`${fila}<br>`);
+}
+
+// 7- Haz un script que escriba una pirámide inversa de los números del 1 al número que indique el usuario (no mayor de 50)  de la siguiente forma : (suponiendo que indica 30).
+// 303030303030303030303030303030303030303030303030303030303030
+// 2929292929292929292929292929292929292929292929292929292929
+// 28282828282828282828282828282828282828282828282828282828
+// . . .
+// 333
+// 22
+// 1
+let num;
+while (true) {
+    num = parseInt(prompt("¿Cuál es el número?"));
+    if (num > 50) {
+        alert("El número no puede ser mayor de 50");
+    } else if (isNaN(num)) {
+        alert("No es un número válido. Por favor, introduce un número.");
+    } else {
+        break;
+    }
+}
+for (let i = num; i >= 1; i--) {
+    let fila = "";
+    for (let j = 0; j < i; j++) {
+        fila += i;
+    }
+    document.write(`${fila}<br>`);
+}
+
+// 8- Crea script para generar pirámide siguiente con los números del 1 al número que indique el usuario (no mayor de 50) 
+// 1
+// 12
+// 123
+// 1234
+// 12345
+// 123456
+// . . .
+let numero;
+while (true) {
+    numero = parseInt(prompt("¿Cuál es el número?"));
+    if (numero > 50) {
+        alert("El número no puede ser mayor de 50");
+    } else if (isNaN(numero)) {
+        alert("No es un número válido. Por favor, introduce un número.");
+    } else {
+        break;
+    }
+}
+for (let i = 1; i <= numero; i++) {
+    let fila = "";
+    for (let j = 1; j <= i; j++) {
+        fila += j;
+    }
+    document.write(`${fila}<br>`);
+}
+
+// 9- Crea un script que escriba los números del 1 al 500, que indique cuáles son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal. Por ejemplo :
+// 1
+// 2
+// 3
+// 4 (Múltiplo de 4)
+// 5
+// ————————————————————
+// 6
+// 7
+// 8 (Múltiplo de 4)
+// 9 (Múltiplo de 9)
+// 10
+// ————————————————————
+// .... 
+for (let i = 1; i <= 500; i++) {
+    let texto = "";
+    if (i % 4 === 0) {
+        texto += `(Múltiplo de 4)`;
+    }
+    if (i % 9 === 0) {
+        texto += `(Múltiplo de 9)`;
+    }
+    document.write(`${i} ${texto}<br>`);
+    if (i % 5 === 0) {
+        document.write(`——————————————————————<br>`);
+    }
+}
+
+// 10- Realiza un script que pida número de filas y columnas y escriba una tabla. Dentro de cada una de las celdas deberá escribirse un número consecutivo en orden descendente. Si, por ejemplo, la tabla es de 7×5 los números irán del 35 al 1.
+
+// SIN HACER EL PUNTO 10
+
+// 11- Realiza un script que pida por teclado 3 edades y 3 nombres e indique el nombre del mayor.
+let edad1, nombre1, edad2, nombre2, edad3, nombre3;
+function pedirEdad() {
+    while (true) {
+        let edad = parseInt(prompt("Introduce tu edad"));
+        if (isNaN(edad) || edad < 0) {
+            alert("La edad debe ser un número entero positivo");
+        } else {
+            return edad;
+        }
+    }
+}
+function pedirNombre() {
+    while (true) {
+        let nombre = prompt("Introduce ahora tu nombre");
+        if (nombre.trim() === "") {
+            alert("El nombre no puede estar vacío");
+        } else {
+            return nombre;
+        }
+    }
+}
+edad1 = pedirEdad();
+nombre1 = pedirNombre();
+edad2 = pedirEdad();
+nombre2 = pedirNombre();
+edad3 = pedirEdad();
+nombre3 = pedirNombre();
+let edades = [edad1, edad2, edad3];
+let nombres = [nombre1, nombre2, nombre3];
+let mayor = Math.max(...edades);
+let indice = edades.indexOf(mayor);
+
+alert(`El nombre del mayor es ${nombres[indice]}`);
