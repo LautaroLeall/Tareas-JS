@@ -1,4 +1,4 @@
-// // 1- Escribir un programa que solicite la edad y si es mayor de 18 años mostrar un mensaje que ya puede conducir, si la edad ingresada no es un número válido indicarlo en un mensaje.
+// 1- Escribir un programa que solicite la edad y si es mayor de 18 años mostrar un mensaje que ya puede conducir, si la edad ingresada no es un número válido indicarlo en un mensaje.
 const edad = prompt("¿Cuál es tu edad?");
 if (isNaN(edad)) {
     alert("La edad no es válida");
@@ -8,14 +8,14 @@ if (isNaN(edad)) {
     alert("Aún no puede conducir");
 }
 
-// // 2- Escribir un programa que solicite una nota (número) de 0  a 10. Luego mostrar la calificación en un alert según los siguientes rangos de nota:
-// // 0-2: Muy deficiente
-// // 3-4: Insuficiente
-// // 5-6: Suficiente
-// // 7: Bien
-// // 8-9: Notable
-// // 10: Sobresaliente
-// // Si ingreso un número que no esté dentro del rango de 0 a 10 mostrar un mensaje de “número erróneo”. Si el número ingresado no es válido mostrar el mensaje “Introduce un número válido”.
+// 2- Escribir un programa que solicite una nota (número) de 0  a 10. Luego mostrar la calificación en un alert según los siguientes rangos de nota:
+// 0-2: Muy deficiente
+// 3-4: Insuficiente
+// 5-6: Suficiente
+// 7: Bien
+// 8-9: Notable
+// 10: Sobresaliente
+// Si ingreso un número que no esté dentro del rango de 0 a 10 mostrar un mensaje de “número erróneo”. Si el número ingresado no es válido mostrar el mensaje “Introduce un número válido”.
 const nota = prompt("¿Cuál es tu nota?");
 if (isNaN(nota)) {
     alert("Introduce un número válido");
@@ -64,8 +64,8 @@ while (true) {
     // Si apretas "cancelar" y tenias una cadena de texto, ESA NO SE MUESTRA EN LA VARIABLE "texto"
 }
 
-// 4- Realiza un script que pida números hasta que se pulse “cancelar”. 
-//Si no es un número deberá indicarse con un «alert» y seguir pidiendo números. 
+// 4- Realiza un script que pida números hasta que se pulse “cancelar”.
+// Si no es un número deberá indicarse con un «alert» y seguir pidiendo números.
 // Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
 let suma = 0;
 while (true) {
@@ -85,7 +85,7 @@ while (true) {
 // El algoritmo para calcular la letra del dni es el siguiente :
 // El número debe ser entre 0 y 99999999
 // Debemos calcular el resto de la división entera entre el número y el número 23.
-// Según el resultado, de 0 a 22, le corresponderá una letra de las siguientes:  (T, R, W, A, G, M, Y, F, P, D, X, B, N, J, Z, S, Q, V, H, L, C, K, E) 
+// Según el resultado, de 0 a 22, le corresponderá una letra de las siguientes:  (T, R, W, A, G, M, Y, F, P, D, X, B, N, J, Z, S, Q, V, H, L, C, K, E)
 // Si lo introducido no es un número deberá indicarse con un alert y volver a preguntar.
 // Deberá de repetirse el proceso hasta que el usuario pulse «cancelar».
 
@@ -134,7 +134,7 @@ for (let i = num; i >= 1; i--) {
     document.write(`${fila}<br>`);
 }
 
-// 8- Crea script para generar pirámide siguiente con los números del 1 al número que indique el usuario (no mayor de 50) 
+// 8- Crea script para generar pirámide siguiente con los números del 1 al número que indique el usuario (no mayor de 50)
 // 1
 // 12
 // 123
@@ -174,7 +174,7 @@ for (let i = 1; i <= numero; i++) {
 // 9 (Múltiplo de 9)
 // 10
 // ————————————————————
-// .... 
+// ....
 for (let i = 1; i <= 500; i++) {
     let texto = "";
     if (i % 4 === 0) {
@@ -228,3 +228,52 @@ const mayor = Math.max(...edades);
 // ... se llama "operador de propagación" y se utiliza para "desempaquetar" el arreglo edades en una lista de argumentos individuales que se pasan a la función Math.max().
 const indice = edades.indexOf(mayor);
 alert(`El nombre del mayor es ${nombres[indice]}`);
+
+// 12- Realiza un script que genere un número aleatorio entre 1 y 99
+const numAleatorio = Math.floor(Math.random() * 99) + 1;
+document.write(`El número aleatorio es ${numAleatorio}`);
+
+// 13- Realiza un script que pida un texto y lo muestre en mayúsculas.
+const textoMayusculas = prompt("Introduce un texto");
+alert(textoMayusculas.toUpperCase());
+
+// 14- Realiza un script que pida una cadena de texto y lo muestre poniendo el signo – entre cada carácter sin usar el método replace. Por ejemplo, si tecleo “hola qué tal”, deberá salir “h-o-l-a- -q-u-e- -t-a-l”.
+
+const text = prompt("Introduce una cadena de texto");
+let textoMostrar = "";
+for (let i = 0; i < text.length; i++) {
+    textoMostrar += `${text[i]}-`;
+}
+alert(textoMostrar);
+
+// 15- Realiza un script que cuente el número de vocales que tiene un texto.
+const textoVocales = prompt("Introduce una cadena de texto");
+let contadorVocales = 0;
+for (let i = 0; i < textoVocales.length; i++) {
+    if (textoVocales[i].match(/[aeiouáéíóú]/i)) {
+        contadorVocales++;
+    }
+}
+alert(`El texto ${textoVocales} tiene ${contadorVocales} vocales`);
+
+// 16- Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, si tecleo “hola que tal” deberá mostrar “lat euq aloh”.
+const textoInvertido = prompt("Introduce una cadena de texto");
+let textoReverso = "";
+for (let i = textoInvertido.length - 1; i >= 0; i--) {
+    //  se le asigna el valor de la longitud de la cadena textoInvertido menos 1.
+    // porque los índices de una cadena comienzan en 0, por lo que el último índice es siempre la longitud menos 1.
+    textoReverso += textoInvertido[i];
+}
+alert(textoReverso);
+
+// 17- Realiza un script que muestre la posición de la primera vocal de un texto introducido por teclado.
+const textoVocal = prompt("Introduce una cadena de texto");
+let primeraVocal = "";
+for (let i = 0; i < textoVocal.length; i++) {
+    if (textoVocal[i].match(/[aeiouáéíóú]/i)) {
+        primeraVocal = textoVocal[i];
+        posicion = i;
+        break;
+    }
+}
+document.write(`La primera vocal es "${primeraVocal.toUpperCase()}" y su posicion es "${posicion}"`);
