@@ -1,5 +1,3 @@
-// Salto de linea <br>
-
 //1) Escribe un programa de una sola línea que haga que aparezca en la pantalla un alert que diga “un mensaje”.
 alert("un mensaje");
 
@@ -76,29 +74,78 @@ document.write(`La frase es: ${frase} <br>`);
 document.write(`Las vocales que aparecen son: ${vocales} <br>`);
 document.write(`Hay ${vocales.length} vocales <br>`);
 
+// OTRA FORMA DE HACERLO AL PUNTO 9
+const frase2 = prompt("Escribe una frase");
+frase2 = frase2.toLowerCase();
+document.write(frase2);
+for (let i = 0; i < frase2.length; i++) {
+    if (
+        // el metodo charAt devuelve el caracter en la posicion i
+        frase2.charAt(i) == "a" ||
+        frase2.charAt(i) == "e" ||
+        frase2.charAt(i) == "i" ||
+        frase2.charAt(i) == "o" ||
+        frase2.charAt(i) == "u"
+    ) {
+        document.write(`Las vocales que aparecen son: ${frase2.charAt(i)}`);
+    }
+}
+
 //10) Escribe un programa que pida un número y nos diga si es divisible por 2, 3, 5 o 7 (sólo hay que comprobar si lo es por uno de los cuatro)
-const num9 = prompt("Ingrese un número");
+const num9 = parseInt(prompt("Ingrese un número"));
 if (
-    parseInt(num9) % 2 === 0 ||
-    parseInt(num9) % 3 === 0 ||
-    parseInt(num9) % 5 === 0 ||
-    parseInt(num9) % 7 === 0
+    (num9) % 2 == 0 ||
+    (num9) % 3 == 0 ||
+    (num9) % 5 == 0 ||
+    (num9) % 7 == 0
 ) {
-    document.write("El número es divisible por 2, 3, 5 o 7 <br>");
+    document.write(`El ${num9} es divisible por 2, 3, 5 o 7 <br>`);
 } else {
-    document.write("El número no es divisible por 2, 3, 5 y 7 <br>");
+    document.write(`El ${num9} NO es divisible por 2, 3, 5 o 7 <br>`);
 }
 
 // 11) Añadir al ejercicio anterior que nos diga por cuál de los cuatro es divisible (hay que decir todos por los que es divisible)
 const num10 = parseInt(prompt("¿Cuál es el número?"));
 let resultado = "";
-if ((num10) % 2 === 0) resultado += "2 - ";  // = resutado = resultado + "2 - ";
-if ((num10) % 3 === 0) resultado += "3 - ";  // = resutado = resultado + "3 - ";
-if ((num10) % 5 === 0) resultado += "5 - ";  // = resutado = resultado + "5 - ";
-if ((num10) % 7 === 0) resultado += "7 - ";  // = resutado = resultado + "7 - ";
+if ((num10) % 2 == 0) {
+    resultado += "2 - ";  // = resutado = resultado + "2 - ";
+}
+if ((num10) % 3 == 0) {
+    resultado += "3 - ";  // = resutado = resultado + "3 - ";
+}
+if ((num10) % 5 == 0) {
+    resultado += "5 - ";  // = resutado = resultado + "5 - ";
+}
+if ((num10) % 7 == 0) {
+    resultado += "7 - ";  // = resutado = resultado + "7 - ";
+}
 if (resultado.length > 0) {
     resultado = resultado.slice(0, -2); // elimina la coma y el espacio al final
-    document.write(`El número es divisible por ${resultado} <br>`);
+    document.write(`El ${num10} es divisible por ${resultado} <br>`);
 } else {
-    document.write("El número no es divisible por 2, 3, 5 y 7");
+    document.write(`El ${num10} NO es divisible por 2, 3, 5 y 7`);
+}
+
+// OTRA FORMA DE HACERLO AL PUNTO 11
+const num11 = parseInt(prompt("¿Cuál es el número?"));
+if (
+    (num11) % 2 == 0 ||
+    (num11) % 3 == 0 ||
+    (num11) % 5 == 0 ||
+    (num11) % 7 == 0
+) {
+    if ((num11) % 2 == 0) {
+        document.write(`El ${num11} es divisible por 2 <br>`);
+    }
+    if ((num11) % 3 == 0) {
+        document.write(`El ${num11} es divisible por 3 <br>`);
+    }
+    if ((num11) % 5 == 0) {
+        document.write(`El ${num11} es divisible por 5 <br>`);
+    }
+    if ((num11) % 7 == 0) {
+        document.write(`El ${num11} es divisible por 7 <br>`);
+    }
+} else {
+    document.write(`El ${num11} NO es divisible por 2, 3, 5 o 7 <br>`);
 }
