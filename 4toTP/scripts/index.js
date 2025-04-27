@@ -1,100 +1,144 @@
-// // 1- Crea un objeto llamado auto que tenga algunas características como el color, marca, modelo y si está encendido o apagado. Crea los métodos necesarios para permitir encender y apagar el auto.
-// const auto = {
-//     color: "rojo",
-//     marca: "Ford",
-//     modelo: "Fiesta",
-//     encendido: false,
-//     // Método encender | Funcion para encender el auto
-//     encender() {
-//         // !encendido evalua si es true o false
-//         // Si es true, se cambia a false y viceversa
-//         if (!this.encendido) {
-//             this.encendido = true;
-//             console.log(`El auto ${this.marca} ${this.modelo} se encendio`);
-//         } else {
-//             console.log(`El auto ${this.marca} ${this.modelo} ya está encendido`);
-//         }
-//     },
-//     apagar() {
-//         if (this.encendido) {
-//             this.encendido = false;
-//             console.log(`El auto ${this.marca} ${this.modelo} se apago`);
-//         } else {
-//             console.log(`El auto ${this.marca} ${this.modelo} ya está apagado`);
-//         }
-//     },
-// };
-// console.log(auto);
+// 1- Crea un objeto llamado auto que tenga algunas características como el color, marca, modelo y si está encendido o apagado. Crea los métodos necesarios para permitir encender y apagar el auto.
+const auto = {
+    color: "rojo",
+    marca: "Ford",
+    modelo: "Fiesta",
+    encendido: false,
+    // Método encender | Funcion para encender el auto
+    encender() {
+        // !encendido evalua si es true o false
+        // Si es true, se cambia a false y viceversa
+        if (!this.encendido) {
+            this.encendido = true;
+            console.log(`El auto ${this.marca} ${this.modelo} se encendio`);
+        } else {
+            console.log(`El auto ${this.marca} ${this.modelo} ya está encendido`);
+        }
+    },
+    apagar() {
+        if (this.encendido) {
+            this.encendido = false;
+            console.log(`El auto ${this.marca} ${this.modelo} se apago`);
+        } else {
+            console.log(`El auto ${this.marca} ${this.modelo} ya está apagado`);
+        }
+    },
+};
+console.log(auto);
 
-// // Punto 1 con Class Constructor
-// class Auto {
-//     constructor(color, marca, modelo, encendido) {
-//         this.color = color;
-//         this.marca = marca;
-//         this.modelo = modelo;
-//         this.encendido = encendido;
-//     }
-//     encender() {
-//         if (!this.encendido) {
-//             this.encendido = true;
-//             console.log(`El auto ${this.marca} ${this.modelo} se encendio`);
-//         } else {
-//             console.log(`El auto ${this.marca} ${this.modelo} ya está encendido`);
-//         }
-//     }
-//     apagar() {
-//         if (this.encendido) {
-//             this.encendido = false;
-//             console.log(`El auto ${this.marca} ${this.modelo} se apago`);
-//         } else {
-//             console.log(`El auto ${this.marca} ${this.modelo} ya está apagado`);
-//         }
-//     }
-// }
-// const auto1 = new Auto("verde", "Wolkswagen", "Suran", false);
-// console.log(auto1);
+// Punto 1 con Class Constructor
+class Auto {
+    constructor(color, marca, modelo, encendido) {
+        this.color = color;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.encendido = encendido;
+    }
+    encender() {
+        if (!this.encendido) {
+            this.encendido = true;
+            console.log(`El auto ${this.marca} ${this.modelo} se encendio`);
+        } else {
+            console.log(`El auto ${this.marca} ${this.modelo} ya está encendido`);
+        }
+    }
+    apagar() {
+        if (this.encendido) {
+            this.encendido = false;
+            console.log(`El auto ${this.marca} ${this.modelo} se apago`);
+        } else {
+            console.log(`El auto ${this.marca} ${this.modelo} ya está apagado`);
+        }
+    }
+}
+const auto1 = new Auto("verde", "Wolkswagen", "Suran", false);
+console.log(auto1);
 
-// // 2-Escribe un programa que cree un objeto "cuenta" con las siguientes propiedades:
-// // Una propiedad titular con el valor "Alex".
-// // Una propiedad saldo, teniendo como valor inicial 0.
-// // Un método ingresar() que permita añadir dinero a la cuenta, pasando la cantidad como parámetro
-// // Un método extraer() que permita retirar la cantidad pasada como parámetro.
-// // Un método informar() que retorne la información del estado de la cuenta.
-// // Utiliza este objeto para mostrar la descripción, ingresar y extraer dinero y volver a mostrar la descripción del estado de la cuenta.
-// class Cuenta {
-//     constructor(titular, saldo = 0) {
-//         this.titular = titular;
-//         this.saldo = saldo;
-//     }
-//     ingresar(cantidad) {
-//         this.saldo += cantidad;
-//         console.log(`Se ha ingresado $${cantidad} a la cuenta de ${this.titular}`);
-//     }
-//     extraer(cantidad) {
-//         if (this.saldo >= cantidad) {
-//             this.saldo -= cantidad;
-//             console.log(
-//                 `Se ha extraído $${cantidad} de la cuenta de ${this.titular}`
-//             );
-//         } else {
-//             console.log(
-//                 `Saldo insuficiente para realizar la extracción de $${cantidad}`
-//             );
-//         }
-//     }
-//     informar() {
-//         console.log(`El Titular de la Cuenta es ${this.titular}`);
-//         console.log(`Su Saldo es de: $${this.saldo}`);
-//     }
-// }
-// const cuenta1 = new Cuenta("Alex");
-// cuenta1.informar();
+// 2-Escribe un programa que cree un objeto "cuenta" con las siguientes propiedades:
+// Una propiedad titular con el valor "Alex".
+// Una propiedad saldo, teniendo como valor inicial 0.
+// Un método ingresar() que permita añadir dinero a la cuenta, pasando la cantidad como parámetro
+// Un método extraer() que permita retirar la cantidad pasada como parámetro.
+// Un método informar() que retorne la información del estado de la cuenta.
+// Utiliza este objeto para mostrar la descripción, ingresar y extraer dinero y volver a mostrar la descripción del estado de la cuenta.
+class Cuenta {
+    constructor(titular, saldo = 0) {
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+    ingresar(cantidad) {
+        this.saldo += cantidad;
+        console.log(`Se ha ingresado $${cantidad} a la cuenta de ${this.titular}`);
+    }
+    extraer(cantidad) {
+        if (this.saldo >= cantidad) {
+            this.saldo -= cantidad;
+            console.log(
+                `Se ha extraído $${cantidad} de la cuenta de ${this.titular}`
+            );
+        } else {
+            console.log(
+                `Saldo insuficiente para realizar la extracción de $${cantidad}`
+            );
+        }
+    }
+    informar() {
+        console.log(`El Titular de la Cuenta es ${this.titular}`);
+        console.log(`Su Saldo es de: $${this.saldo}`);
+    }
+}
+const cuenta1 = new Cuenta("Alex");
+cuenta1.informar();
+
+// 3-Escribe una clase que permita crear distintos objetos “rectángulos”, con las propiedades de alto y ancho, mas los métodos necesarios para modificar y mostrar sus propiedades, calcular el perímetro y el área
+class Rectangulo {
+    constructor(alto, ancho) {
+        this.alto = alto;
+        this.ancho = ancho;
+    }
+    modificar(alto, ancho) {
+        this.alto = alto;
+        this.ancho = ancho;
+        return (`El perimetro del rectangulo modificado es ${this.getPerimetro()} y su área es ${this.getArea()}`);
+    }
+    mostrar() {
+        return `El Alto del Rectangulo es ${this.alto} y el Ancho es ${this.ancho}`;
+    }
+    getPerimetro() {
+        return (this.alto + this.ancho) * 2;
+    }
+    getArea() {
+        return this.alto * this.ancho;
+    }
+}
+const rectangulo1 = new Rectangulo(
+    parseInt(prompt("Ingrese el alto del rectangulo")),
+    parseInt(prompt("Ingrese el ancho del rectangulo"))
+);
+console.log(rectangulo1.mostrar());
+console.log(`Perímetro: ${rectangulo1.getPerimetro()}`);
+console.log(`Área: ${rectangulo1.getArea()}`);
 
 // 4- Escribe una clase Producto para crear objetos. Estos objetos, deben presentar las propiedades código, nombre y precio, además del método imprime datos, el cual escribe por pantalla los valores de sus propiedades.
 // Posteriormente, cree tres instancias de este objeto y guárdalas en un array.
 // Por último, utilice el método imprime datos para mostrar por pantalla los valores de los tres objetos instanciados.
-
-// POR HACER
+class Producto {
+    constructor(codigo, nombre, precio) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+    imprimeDatos() {
+        console.log(`El código del producto es ${this.codigo}`);
+        console.log(`El nombre del producto es ${this.nombre}`);
+        console.log(`El precio del producto es ${this.precio}`);
+    }
+}
+const producto1 = new Producto("01", "iPhone 12", 1500);
+const producto2 = new Producto("02", "iPhone 13", 2000);
+const producto3 = new Producto("03", "iPhone 14", 2500);
+const productos = [producto1, producto2, producto3];
+productos.forEach((producto) => producto.imprimeDatos());
 
 // 5- Crea una clase llamada Persona que siga las siguientes condiciones:
 // Sus propiedades son: nombre, edad, DNI, sexo (H hombre, M mujer), peso y altura, año de nacimiento. Si quieres añadir alguna propiedad extra puedes hacerlo.
@@ -103,7 +147,6 @@
 // esMayorDeEdad: indica si es mayor de edad, devuelve un mensaje indicando que la persona es mayor de edad.
 // mostrarDatos: devuelve toda la información del objeto.
 // generaDNI(): genera un número aleatorio de 8 cifras.
-
 class Persona {
     constructor(nombre, edad, sexo, peso, altura, añoNacimiento) {
         this.nombre = nombre,
@@ -187,3 +230,19 @@ class Persona {
 }
 const persona1 = new Persona("Lautaro Leal Del Prete", 20, "H", 110, 1.7, 2004);
 console.log(persona1);
+
+// 6- Crear una clase Libro que contenga al menos las siguientes propiedades:
+// ISBN | Título | Autor | Páginas
+// Crear sus respectivos métodos get y set correspondientes para cada propiedad. Crear el método mostrarLibro() para mostrar la información relativa al libro con el siguiente formato:
+// “El libro xxx con ISBN xxx creado por el autor xxx tiene páginas xxx”
+// Crear al menos 2 objetos libros y utilizar el método mostrarLibro();
+// Por último, indicar cuál de los 2 objetos “libros” tiene más páginas.
+class Libro {
+    constructor(isbn, titulo, autor, paginas) {
+        this.isbn = isbn;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.paginas = paginas;
+    }
+}
+// FALTA TERMINAR
